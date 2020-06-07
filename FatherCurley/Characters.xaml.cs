@@ -21,7 +21,6 @@ namespace FatherCurley
         public Characters()
         {
             InitializeComponent();
-            //this.DataContext = 
         }
     }
 }

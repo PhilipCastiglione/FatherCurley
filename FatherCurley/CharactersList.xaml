@@ -1,0 +1,119 @@
+﻿<Page x:Class="FatherCurley.CharactersList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FatherCurley"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="Characters">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border Grid.Column="0" Grid.Row="0" Height="35" Padding="5" Background="#333">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White">Characters</Label>
+        </Border>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Hard coded" Grid.ColumnSpan="2" Grid.Row="0" />
+            <Border Grid.Column="0" Grid.Row="1" BorderBrush="#333" BorderThickness="1">
+                <Label VerticalAlignment="Center">Name</Label>
+            </Border>
+            <Border Grid.Column="1" Grid.Row="1" BorderBrush="#333" BorderThickness="1">
+                <Label VerticalAlignment="Center">Role</Label>
+            </Border>
+            
+            <TextBlock Grid.Column="0" Grid.Row="2">Philip</TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="2">Protagonist</TextBlock>
+            
+            <TextBlock Grid.Column="0" Grid.Row="3">Gráinne</TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="3">Impartial Observer</TextBlock>
+            
+            <TextBlock Grid.Column="0" Grid.Row="4">Thomas</TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="4">Supervillain</TextBlock>
+        </Grid>
+        <Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:c="clr-namespace:FatherCurley.models"
+            Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.Resources>
+                <c:Character x:Key="char1" Name="Philip" Role="Hero" />
+                <c:Character x:Key="char2" Name="Gráinne" Role="Partial Observer"/>
+                <c:Character x:Key="char3" Name="Thomas" Role="Heroic Mentor" />
+            </Grid.Resources>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Data in XAML" Grid.ColumnSpan="2" Grid.Row="0" />
+
+            <Border Grid.Column="0" Grid.Row="1" BorderBrush="#333" BorderThickness="1">
+                <Label VerticalAlignment="Center">Name</Label>
+            </Border>
+            <Border Grid.Column="1" Grid.Row="1" BorderBrush="#333" BorderThickness="1">
+                <Label VerticalAlignment="Center">Role</Label>
+            </Border>
+
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding Path=Name}" >
+                <TextBlock.DataContext>
+                    <Binding Source="{StaticResource char1}"/>
+                </TextBlock.DataContext>
+            </TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Path=Role}" >
+                <TextBlock.DataContext>
+                    <Binding Source="{StaticResource char1}"/>
+                </TextBlock.DataContext>
+            </TextBlock>
+
+            <TextBlock Grid.Column="0" Grid.Row="3" Text="{Binding Path=Name}" >
+                <TextBlock.DataContext>
+                    <Binding Source="{StaticResource char2}"/>
+                </TextBlock.DataContext>
+            </TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Path=Role}" >
+                <TextBlock.DataContext>
+                    <Binding Source="{StaticResource char2}"/>
+                </TextBlock.DataContext>
+            </TextBlock>
+
+            <TextBlock Grid.Column="0" Grid.Row="4" Text="{Binding Path=Name}" >
+                <TextBlock.DataContext>
+                    <Binding Source="{StaticResource char3}"/>
+                </TextBlock.DataContext>
+            </TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Path=Role}" >
+                <TextBlock.DataContext>
+                    <Binding Source="{StaticResource char3}"/>
+                </TextBlock.DataContext>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Page>

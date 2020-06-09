@@ -4,6 +4,9 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <SelfContained>True</SelfContained>
+    <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
+    <PublishSingleFile>true</PublishSingleFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,5 +16,4 @@
   <ItemGroup>
     <Resource Include="images\ted.jpg" />
   </ItemGroup>
-
 </Project>

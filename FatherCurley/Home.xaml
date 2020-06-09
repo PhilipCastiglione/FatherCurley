@@ -27,7 +27,7 @@
         </Border>
 
         <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#CCF" Padding="5">
-            <Hyperlink NavigateUri="Characters.xaml">Characters</Hyperlink>
+            <Hyperlink NavigateUri="CharactersList.xaml">Characters</Hyperlink>
         </TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#CCF" Padding="5">Things</TextBlock>
         <TextBlock Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#CCF" Padding="5">More Things</TextBlock>
